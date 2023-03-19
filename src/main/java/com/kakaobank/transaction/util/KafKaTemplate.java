@@ -2,7 +2,7 @@ package com.kakaobank.transaction.util;
 
 import com.kakaobank.transaction.constant.Messages;
 import com.kakaobank.transaction.constant.ServiceCode;
-import com.kakaobank.transaction.domain.kafka.ProducerCallback;
+import com.kakaobank.transaction.callback.kafka.ProducerCallback;
 import com.kakaobank.transaction.exception.KafkaSendException;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;

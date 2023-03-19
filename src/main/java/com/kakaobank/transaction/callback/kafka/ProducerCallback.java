@@ -1,4 +1,4 @@
-package com.kakaobank.transaction.domain.kafka;
+package com.kakaobank.transaction.callback.kafka;
 
 import com.kakaobank.transaction.constant.Messages;
 import org.apache.kafka.clients.producer.Callback;
@@ -14,11 +14,11 @@ public class ProducerCallback implements Callback {
     public void onCompletion(RecordMetadata recordMetadata, Exception e) {
         if (e == null) {
             // 성공
-            logger.info(Messages.MESSAGE_SEND_SUCCESS);
+            logger.info("topic: "+ recordMetadata.topic() + ". " + Messages.MESSAGE_SEND_SUCCESS);
         }
         else {
             // 실패
-            logger.info(Messages.MESSAGE_SEND_FAIL);
+            logger.info("topic: "+ recordMetadata.topic() + ". " + Messages.MESSAGE_SEND_FAIL);
         }
     }
 }
